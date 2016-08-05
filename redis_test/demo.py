@@ -67,6 +67,7 @@ class AgentContainer(object):
         if self.abc_agent_debug:
             print "".join(args)
 
+"""
 # 应用举例：
 # 场景：使用代理容器代理redis，当调用redis出错时，重连redis
 
@@ -89,9 +90,10 @@ class HRedis(AgentContainer):
     def __init__(self):
         redis = Redis()
         AgentContainer.__init__(self, redis)
-        #是否打印调试信息，调试信息打印方法可以重载为其他日志输出方式
+        # 是否打印调试信息，调试信息打印方法可以重载为其他日志输出方式
         self.abc_agent_debug = True
 
+    # 重载error函数，可以通过判断redis报错是否为io类，对io类的报错进行处理：重新创建一个redis连接
     def abc_agent_object_error(self, except_info):
         self.abc_agent_current_object = Redis()
         raise except_info
@@ -103,3 +105,4 @@ print redis.hget("ssssss")
 print '========='
 print redis.hset('a', 'b')
 print "============"
+"""
