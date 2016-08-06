@@ -43,4 +43,28 @@ shop_xpath = u"//div[@class='tit']/a[@data-hippo-type='shop']"
 shops = tree.xpath(shop_xpath)
 print shops[0].get("href")
 
+shop_link = shops[0].get("href")
+response2 = br.open("http://www.dianping.com"+shop_link)
+
+body = response2.read()
+tree_shop = etree.HTML(body)
+
+shop_title_xpath = u"//div[@class='shop-name']/h2"
+shop_titles = tree_shop.xpath(shop_title_xpath)
+
+title = shop_titles[0].text
+print title
+
+shop_address_xpath = u"//div[@class='brief-info']/div[@class='address']"
+shop_addresses = tree_shop.xpath(shop_address_xpath)
+
+print shop_addresses[0].get("class")
+print shop_addresses[0].text
+print shop_addresses[0].tail
+
+address = shop_addresses[0].text
+
+print address
+
+
 
