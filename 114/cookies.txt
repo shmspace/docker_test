@@ -1,0 +1,11 @@
+# Netscape HTTP Cookie File
+# http://www.netscape.com/newsref/std/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.dianping.com	TRUE	/	FALSE	0	PHOENIX_ID	0a016b45-15665ac9a9a-2f4132
+www.dianping.com	FALSE	/	FALSE	0	JSESSIONID	E2F745E0370AB66AA807166F896824A0
+# .dianping.com	TRUE	/	FALSE	1502120625	aburl	1
+# .dianping.com	TRUE	/	FALSE	1502120625	cy	8
+# .dianping.com	TRUE	/	FALSE	1502120625	cye	chengdu
+# .dianping.com	TRUE	/	FALSE	1502120626	_hc.v	8a72da9e-3176-28c7-7630-f8711f4a925f.1470584626
+# .hls.dianping.com	TRUE	/	FALSE	1470586726	_hc.s	"\"8a72da9e-3176-28c7-7630-f8711f4a925f.1470584626.1470584626.1470584626\""

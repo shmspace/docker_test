@@ -4,6 +4,7 @@ import re
 import mechanize
 import cookielib
 from lxml import etree
+import HTMLParser
 
 br = mechanize.Browser()  
 cj = cookielib.LWPCookieJar()  
@@ -53,18 +54,15 @@ shop_title_xpath = u"//div[@class='shop-name']/h2"
 shop_titles = tree_shop.xpath(shop_title_xpath)
 
 title = shop_titles[0].text
-print title
+print title.encode("utf-8")
 
 shop_address_xpath = u"//div[@class='brief-info']/div[@class='address']"
 shop_addresses = tree_shop.xpath(shop_address_xpath)
 
-print shop_addresses[0].get("class")
-print shop_addresses[0].text
-print shop_addresses[0].tail
+address_str = etree.tostring(shop_addresses[0])
 
-address = shop_addresses[0].text
+dr = re.compile(r'<[^>]+>',re.S)
+dd = dr.sub('', address_str)
 
-print address
-
-
-
+parser = HTMLParser.HTMLParser()
+print parser.unescape(dd)
